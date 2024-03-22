@@ -9,7 +9,7 @@ export default function StreamsId() {
  
 
 
-        <meta name="fc:frame" content="GMCasts" />
+        <meta name="fc:frame" content="vNext" />
         <meta property="fc:frame:video"
     content="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8" />
 
