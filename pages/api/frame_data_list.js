@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 const axios = require('axios');
 const PINATA_API_KEY = process.env.PINATA_API_KEY;
 const PINATA_API_URL = process.env.PINATA_HUB_URL;
