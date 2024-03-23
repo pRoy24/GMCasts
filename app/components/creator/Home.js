@@ -1,9 +1,12 @@
 import CommonContainer from "../common/CommonContainer";
 import CommonButton from "../common/CommonButton";
+
 import { useState,} from 'react';
 
 import axios from 'axios';
 import PlayerHome from "../player/Home";
+
+const STREAMER_SERVER = 'http://54.71.88.121';
 
 export default function CreatorHome() {
   const [ streamData, setStreamData ] = useState(null);
@@ -41,7 +44,7 @@ export default function CreatorHome() {
       text: "",
       playbackId: streamData.playbackId,
     }
-    axios.post(`/api/create_cast`, payload).then(function(dataRes) {
+    axios.post(`${STREAMER_SERVER}/hub/cast`, payload).then(function(dataRes) {
       console.log(dataRes);
 
     });

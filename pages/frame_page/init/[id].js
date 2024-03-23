@@ -21,8 +21,11 @@ export default function InitFramePage(props) {
     <div>
       <Head>
         <title>Frame Page</title>
+        <meta name="fc:frame" content="vNext" />
+        <meta name="of:accepts:xmtp" content='vNext' />
+        <meta name="of:accepts:farcaster" content="vNext" />
         <meta name="of:version" content="vNext" />
-        <meta name="of:accepts:$protocol_identifier" content="vNext" />
+
         <meta name="of:image" content={metaImage} />
         <meta name="og:image" content={metaImage} />
         <meta
