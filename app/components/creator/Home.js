@@ -37,8 +37,11 @@ export default function CreatorHome() {
 
   const publishFrame = async () => {
     console.log("PUBLISHING FRAME");
-
-    axios.post(`/api/create_cast`).then(function(dataRes) {
+    const payload = {
+      text: "",
+      playbackId: streamData.playbackId,
+    }
+    axios.post(`/api/create_cast`, payload).then(function(dataRes) {
       console.log(dataRes);
 
     });
