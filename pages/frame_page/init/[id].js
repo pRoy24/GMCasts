@@ -1,3 +1,5 @@
+const axios = require('axios');
+const { STREAMER_SERVER } = process.env;
 
 export default function InitFramePage() {
   return (
@@ -8,16 +10,15 @@ export default function InitFramePage() {
 }
 
 export async function getStaticPaths() {
-
-}
-
-export async function getStaticProps({params}) {
   const { data } = await axios.get(`${STREAMER_SERVER}/frames/list`);
-  console.log(data);
 
   return {
     props: {
       data
     },
   }
+}
+
+export async function getStaticProps({params}) {
+
 }

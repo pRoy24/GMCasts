@@ -1,4 +1,5 @@
-
+const axios = require('axios');
+const { STREAMER_SERVER } = process.env;
 
 export default function ViewFramePage() {
   return (
@@ -9,7 +10,13 @@ export default function ViewFramePage() {
 }
 
 export async function getStaticPaths() {
+  const { data } = await axios.get(`${STREAMER_SERVER}/frames/list`);
 
+  return {
+    props: {
+      data
+    },
+  }
 }
 
 export async function getStaticProps({params}) {
