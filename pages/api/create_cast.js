@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
   const payload = req.body;
 
-  const framURL = `${FRAME_BASE_URL}/${payload.playbackId}`
+  const frameURL = `${FRAME_BASE_URL}/${payload.playbackId}`
 
   const dataOptions = {
     fid: FID,
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
 
   const castAddReq = await makeCastAdd(
     {
-      text: "This is a song about somebody else https://google.com",
+      text: `${frameURL}`,
       embeds: [],
       embedsDeprecated: [],
       mentions: [],
