@@ -44,11 +44,6 @@ export default function InitFramePage(props) {
 
 export async function getStaticPaths() {
   const paths = [
-    {
-      params: {
-        id: 'b390oneg0u2wq3fd'
-      }
-    }
   ]
   return {
     paths: paths,
