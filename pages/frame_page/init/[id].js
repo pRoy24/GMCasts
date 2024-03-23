@@ -12,11 +12,22 @@ export default function InitFramePage(props) {
     metaImage = metadata.image;
   }
   let metaButtons = null;
+  let frameState = null;
   if (metadata.buttons) {
     metaButtons = metadata.buttons.map((button, idx) => {
-      return <meta name={`fc:frame:button:${(idx + 1)}`} content={button.text} />
+      return (
+        <>
+      <meta name={`fc:frame:button:${(idx + 1)}`} content={button.text} />
+      <meta name={`fc:frame:button:${(idx + 1)}:post_url`} content={button.post_url} />
+      <meta name={`fc:frame:button:${(idx + 1)}:action`} content={button.action} />
+      </>
+    )
     });
   }
+  if (metadata.state) {
+    frameState = <meta name="fc:frame:state" content={metadata.state} />
+  }
+
   return (
     <div>
       <Head>
@@ -39,6 +50,7 @@ export default function InitFramePage(props) {
         <meta property="fc:frame:image" content={metaImage} />
    
         {metaButtons}
+        {frameState}
       </Head>
       <h1>Frame Page</h1>
     </div>
