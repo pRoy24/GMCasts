@@ -3,6 +3,7 @@ import CommonButton from "../common/CommonButton";
 import { useState,} from 'react';
 
 import axios from 'axios';
+import PlayerHome from "../player/Home";
 
 export default function CreatorHome() {
   const [ streamData, setStreamData ] = useState(null);
@@ -16,9 +17,31 @@ export default function CreatorHome() {
     }).then(function(dataRes) {
       console.log(dataRes.data);
       setStreamData(dataRes.data);
-
+       
     });
 
+  }
+
+  const castNewScreeningFrame = async (evt) => {
+    evt.preventDefault();
+    
+    console.log('castNewScreeningFrame')
+
+
+    await publishFrame()
+
+ //   await castPublishedFrame();
+
+
+  }
+
+  const publishFrame = async () => {
+    console.log("PUBLISHING FRAME");
+
+    axios.post(`/api/create_cast`).then(function(dataRes) {
+      console.log(dataRes);
+
+    });
   }
 
 
@@ -28,6 +51,15 @@ export default function CreatorHome() {
     responseDataDisplay = <div>
       <div>Stream ID: {streamData.streamKey}</div>
       <div>Playback ID: {streamData.playbackId}</div>
+
+      <div>
+        <PlayerHome playbackId={streamData.playbackId} />
+      </div>
+      <div>
+        <CommonButton onClick={castNewScreeningFrame}>
+          Publish
+        </CommonButton>
+      </div>
     </div>
   
   }

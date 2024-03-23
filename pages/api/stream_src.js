@@ -5,8 +5,6 @@ const livepeer = new Livepeer({apiKey});
 
 export default async function handler(req, res) {
   const playbackId = req.query.playbackId;
-  console.log(playbackId);
-
   const response = await livepeer.playback.get(playbackId);
 
 

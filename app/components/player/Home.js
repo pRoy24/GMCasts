@@ -17,12 +17,8 @@ import axios from "axios";
 // import { vodSource } from "./source";
 import { useEffect, useState } from "react";
 
-
-
-const playbackId = "ef96f8vvfta18y5k";
-
-
-export default function PlayerHome() {
+export default function PlayerHome(props) {
+  const { playbackId } = props;
   const [ vodSource, setVodSource ] = useState(null);
   useEffect(() => {
     axios.get(`/api/stream_src?playbackId=${playbackId}`).then((res) => {
