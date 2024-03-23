@@ -14,7 +14,7 @@ export default function InitFramePage(props) {
   let metaButtons = null;
   if (metadata.buttons) {
     metaButtons = metadata.buttons.map((button, idx) => {
-      return <meta name={`fc:frame:button:${idx}`} content={button.text} />
+      return <meta name={`fc:frame:button:${(idx + 1)}`} content={button.text} />
     });
   }
   return (
