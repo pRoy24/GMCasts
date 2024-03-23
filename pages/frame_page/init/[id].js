@@ -13,6 +13,7 @@ export default function InitFramePage(props) {
   }
   let metaButtons = null;
   let frameState = null;
+  let postURL = null;
   if (metadata.buttons) {
     metaButtons = metadata.buttons.map((button, idx) => {
       return (
@@ -26,6 +27,9 @@ export default function InitFramePage(props) {
   }
   if (metadata.state) {
     frameState = <meta name="fc:frame:state" content={metadata.state} />
+  }
+  if (metadata.post_url) {
+    postURL = <meta name="fc:frame:post_url" content={metadata.post_url} />
   }
 
   return (
@@ -43,14 +47,11 @@ export default function InitFramePage(props) {
           property="of:accepts:xmtp"
           content="2024-02-01"
         />
-        <meta
-          property="of:accepts:lens"
-          content="1.1"
-        />
         <meta property="fc:frame:image" content={metaImage} />
    
         {metaButtons}
         {frameState}
+        {postURL}
       </Head>
       <h1>Frame Page</h1>
     </div>
