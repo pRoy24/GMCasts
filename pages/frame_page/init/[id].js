@@ -9,16 +9,3 @@ export default function InitFramePage() {
   )
 }
 
-export async function getStaticPaths() {
-  const { data } = await axios.get(`${STREAMER_SERVER}/frames/list`);
-
-  return {
-    props: {
-      data
-    },
-  }
-}
-
-export async function getStaticProps({params}) {
-
-}
