@@ -46,6 +46,8 @@ export default function InitFramePage(props) {
 }
 
 export async function getStaticPaths() {
+  const data = await axios.get(`${STREAMER_SERVER}/frames/list`);
+  console.log(data);
   const paths = [
   ]
   return {
