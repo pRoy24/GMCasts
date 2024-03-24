@@ -24,13 +24,9 @@ export default function FrameDataClient(props) {
           "source": [
             {
                 "hrn": "HLS (TS)",
-                "type": "html5/application/vnd.apple.mpegurl",
-                "url": "https://livepeercdn.studio/hls/ae5b8iv3nuptn7yf/index.m3u8"
-            },
-            {
-                "hrn": "WebRTC (H264)",
-                "type": "html5/video/h264",
-                "url": "https://livepeercdn.studio/webrtc/ae5b8iv3nuptn7yf"
+                  src: metadata.video,
+                  type: metadata.videoType,
+                
             }
         ]
       }
