@@ -20,7 +20,7 @@ export default function FrameDataClient(props) {
     const metaSrc = {
       "type": "live",
       "meta": {
-          "live": 0,
+          "live": 1,
           "source": [
               {
                   "hrn": "HLS (TS)",
