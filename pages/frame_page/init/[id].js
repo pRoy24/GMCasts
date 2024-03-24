@@ -1,12 +1,15 @@
 const axios = require('axios');
 const { STREAMER_SERVER } = process.env;
 import Head from 'next/head';
+import '@/app/globals.css';
+
+import CommonContainer from '@/app/components/common/CommonContainer';
 const default_image = 'https://imaginewares.s3.us-west-2.amazonaws.com/static/txt2img/generations/generation_15_190f32.png';
 
 
 export default function InitFramePage(props) {
-  const { metadata } = props;
-  console.log(metadata);
+  const { metadata , id} = props;
+
   let metaImage = default_image;
   if (metadata.image) {
     metaImage = metadata.image;
@@ -52,7 +55,11 @@ export default function InitFramePage(props) {
         {frameState}
         {postURL}
       </Head>
-      <h1>Frame Page</h1>
+      <div>
+        <CommonContainer>
+
+        </CommonContainer>
+       </div> 
     </div>
   )
 }
@@ -69,11 +76,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  console.log(params);
+  console.log("EE TEE");
   const { id } = params;
   const { data } = await axios.get(`${STREAMER_SERVER}/frames/init_metadata?id=${id}`);
   return {
     props: {
       metadata: data,
+
     },
   }
 }

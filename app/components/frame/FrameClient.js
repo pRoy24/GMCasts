@@ -25,6 +25,8 @@ export default function FrameClient(props) {
       const url = urls[0];
       axios.post(`${STREAMER_SERVER}/frames/extract_meta`, { url }).then(function (dataResponse) {
         const data = dataResponse.data;
+        console.log(data);
+        
         setMeta(data);
       });
     }

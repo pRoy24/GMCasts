@@ -13,7 +13,7 @@ export default function TopNav() {
       <div className="grid grid-cols-3">  
       <div className="logo-block pl-4 flex">
 
-        <img src={"lg55.png"} className="w-[40px] w-h-[40px] inline-flex mt-1"/>
+        <img src={"/lg55.png"} className="w-[40px] w-h-[40px] inline-flex mt-1"/>
         <div className="inline-flex ml-2 text-[22px] font-bold mt-2 pl-2 ">GMCasts</div>
       </div>  
       <div>
