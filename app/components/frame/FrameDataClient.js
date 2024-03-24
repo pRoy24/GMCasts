@@ -4,6 +4,9 @@ import VideoPlayer from './VideoPlayer';
 export default function FrameDataClient(props) {
   const { metadata, id } = props;
 
+  console.log("FR DATA CLIENT");
+  console.log(metadata);
+
   const [meta, setMeta] = useState({});
   let currentDisplay = <span />;
 

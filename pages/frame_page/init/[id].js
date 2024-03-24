@@ -10,6 +10,8 @@ const default_image = 'https://imaginewares.s3.us-west-2.amazonaws.com/static/tx
 
 export default function InitFramePage(props) {
   const { metadata , id} = props;
+  console.log(metadata);
+
 
   let metaImage = default_image;
   if (metadata.image) {
@@ -58,7 +60,7 @@ export default function InitFramePage(props) {
       </Head>
       <div>
         <CommonContainer>
-          <FrameDataClient metadata={metadata} id={id}/>
+        
         </CommonContainer>
        </div> 
     </div>
@@ -76,8 +78,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params);
-  console.log("EE TEE");
+
   const { id } = params;
   const { data } = await axios.get(`${STREAMER_SERVER}/frames/init_metadata?id=${id}`);
   return {
