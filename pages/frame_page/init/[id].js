@@ -19,8 +19,7 @@ export default function InitFramePage(props) {
       return (
         <>
       <meta name={`fc:frame:button:${(idx + 1)}`} content={button.text} />
-      <meta name={`fc:frame:button:${(idx + 1)}:post`} content={button.post_url} />
-      <meta name={`fc:frame:button:${(idx + 1)}:action`} content={button.action} />
+      <meta name={`fc:frame:post_url`} content={button.post_url} />
       </>
     )
     });
