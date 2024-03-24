@@ -60,7 +60,7 @@ export default function InitFramePage(props) {
       </Head>
       <div>
         <CommonContainer>
-        
+          <FrameDataClient metadata={metadata} id={id} />
         </CommonContainer>
        </div> 
     </div>
