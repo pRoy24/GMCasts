@@ -9,7 +9,6 @@ export default function FrameListClient() {
 
   useEffect(() => {
     axios.get(`${STREAMING_SERVER}/frames/active_frames`).then((response) => {
-      console.log(response.data);
       setFrameList(response.data);
     });;
 
