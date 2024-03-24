@@ -3,9 +3,7 @@ import VideoPlayer from './VideoPlayer';
 
 export default function FrameDataClient(props) {
   const { metadata, id } = props;
-  console.log(metadata);
-  console.log(id);
-  
+
   const [ meta, setMeta] = useState({});
   let currentDisplay = <span />;
   if (metadata.video) {
@@ -15,8 +13,27 @@ export default function FrameDataClient(props) {
         type: metadata.videoType,
       }
     ]
+
+
+
+    
+    const metaSrc = {
+      "type": "live",
+      "meta": {
+          "live": 0,
+          "source": [
+              {
+                  "hrn": "HLS (TS)",
+                  "type": metadata.videoType,
+                  "url": metadata.video
+              },
+
+          ]
+      }
+  }
+
     currentDisplay = (
-      <VideoPlayer src={metadata.video} />
+      <VideoPlayer src={metaSrc} />
     )
   }
 
