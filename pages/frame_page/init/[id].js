@@ -4,6 +4,7 @@ import Head from 'next/head';
 import '@/app/globals.css';
 
 import CommonContainer from '@/app/components/common/CommonContainer';
+import FrameDataClient from '@/app/components/frame/FrameDataClient';
 const default_image = 'https://imaginewares.s3.us-west-2.amazonaws.com/static/txt2img/generations/generation_15_190f32.png';
 
 
@@ -57,7 +58,7 @@ export default function InitFramePage(props) {
       </Head>
       <div>
         <CommonContainer>
-
+          <FrameDataClient metadata={metadata} id={id}/>
         </CommonContainer>
        </div> 
     </div>
