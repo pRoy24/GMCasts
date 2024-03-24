@@ -12,11 +12,11 @@ import {
 
 const playbackId = "f5eese9wwl88k4g8";
 
-export default function VideoPlayer (vodSource) {
-  console.log(vodSource);
+export default function VideoPlayer (src) {
+  console.log(src);
 
   return (
-    <Player.Root src={vodSource}>
+    <Player.Root src={[src]}>
       <Player.Container>
         <Player.Video title="Live stream" />
 

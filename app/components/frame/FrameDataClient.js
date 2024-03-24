@@ -16,7 +16,7 @@ export default function FrameDataClient(props) {
       }
     ]
     currentDisplay = (
-      <VideoPlayer vodSource={vodSource} />
+      <VideoPlayer src={metadata.video} />
     )
   }
 
