@@ -16,13 +16,17 @@ import * as Player from "@livepeer/react/player";
 
 const playbackId = "f5eese9wwl88k4g8";
 
-export default function VideoPlayer (src) {
-
+export default function VideoPlayer (props) {
+  const { vodSrc } = props;
+  console.log(vodSrc);
 
 
   return (
-    <Player.Root src={getSrc(src)}>
-    <Player.Container className="h-[720px] w-[720px] overflow-hidden bg-gray-950">
+    <div className="bg-neutral-50">
+
+  
+    <Player.Root src={getSrc(vodSrc)}>
+    <Player.Container className="h-[512px] w-[512px] overflow-hidden bg-sky-950 m-auto">
       <Player.Video title="Live stream" className="h-full w-full" />
 
       <Player.Controls className="flex items-center justify-center">
@@ -63,5 +67,6 @@ export default function VideoPlayer (src) {
       </Player.Controls>
     </Player.Container>
   </Player.Root>
+  </div>
   );
 };
