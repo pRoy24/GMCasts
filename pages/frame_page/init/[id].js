@@ -19,7 +19,7 @@ export default function InitFramePage(props) {
       return (
         <>
       <meta name={`fc:frame:button:${(idx + 1)}`} content={button.text} />
-      <meta name={`fc:frame:button:${(idx + 1)}:post_url`} content={button.post_url} />
+      <meta name={`fc:frame:button:${(idx + 1)}:post`} content={button.post} />
       <meta name={`fc:frame:button:${(idx + 1)}:action`} content={button.action} />
       </>
     )
@@ -28,8 +28,8 @@ export default function InitFramePage(props) {
   if (metadata.state) {
     frameState = <meta name="fc:frame:state" content={metadata.state} />
   }
-  if (metadata.post_url) {
-    postURL = <meta name="fc:frame:post_url" content={metadata.post_url} />
+  if (metadata.post) {
+    postURL = <meta name="fc:frame:post" content={metadata.post} />
   }
 
   return (

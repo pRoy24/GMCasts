@@ -1,5 +1,5 @@
 
-import FrameListClient from "@/app/components/frame/FrameListClient";
+
 
 
 
