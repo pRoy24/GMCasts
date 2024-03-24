@@ -14,9 +14,15 @@ const playbackId = "f5eese9wwl88k4g8";
 
 export default function VideoPlayer (src) {
   console.log(src);
+  const vod = [{
+    "hrn": "HLS (TS)",
+    "type": "html5/application/vnd.apple.mpegurl",
+    "url": src
+}];
+
 
   return (
-    <Player.Root src={[src]}>
+    <Player.Root src={vod}>
       <Player.Container>
         <Player.Video title="Live stream" />
 
