@@ -6,7 +6,7 @@ import { useState,} from 'react';
 import axios from 'axios';
 import PlayerHome from "../player/Home";
 
-const STREAMER_SERVER = 'http://54.71.88.121';
+const STREAMER_SERVER = process.env.NEXT_PUBLIC_STREAMER_SERVER;
 
 export default function CreatorHome() {
   const [ streamData, setStreamData ] = useState(null);
